@@ -18,9 +18,9 @@ window.addEventListener("load",function(){
         var reader = new FileReader();
         var file = document.getElementById("imageFile").files[0];
         reader.readAsDataURL(file);
-        canvasButtonElem.style.display = "block";
         
         var canvasButtonElem = document.getElementById("canvasDraw");
+        canvasButtonElem.style.display = "block";
         canvasButtonElem.addEventListener("click",function(){
             this.style.display = "none";
             document.getElementById("imageArea").style.display = "block";
@@ -47,7 +47,7 @@ window.addEventListener("load",function(){
         Canvas.resize(width, height);
         Canvas.ctx.drawImage(uploadImg,0,0,Canvas.can.width, Canvas.can.height);
 
-        var saveElem = document.getElementById("save");
+        var saveElem = document.getElementById("saveButton");
         saveElem.addEventListener("click",Canvas.save,true);
 
         var canvasColorElem = document.getElementById("canvasColorChange");
