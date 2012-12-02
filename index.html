@@ -1,63 +1,44 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-2022-JP">
+<script>
+if(!Canvas) var Canvas = {};
+</script>
 <script type="text/javascript" src="./drawing.js"></script>
-<style>
-#c1 {
-position: absolute;
-top: 0px;
-left: 0px;
-}
-</style>
 </head>
 <body>
 
 <form>
 <table cols="2" rows="1" border="0"><tbody><tr><td><input type="file" accept="image/*" id="imageFile"></td><td><input type="button" id="canvasDraw" value="お絵かきする" style="display:none"></td></tr></tbody></table>
 <br>
-<font size="-1" color="red" id="load_res" style="display:none;"></font></form>
-<br>
+<font size="-1" color="red" id="load_res" style="display:none;"></font>
+</form>
+
+<span id="carea" style="display:none;"><canvas id="c1" style="position:absolute; top:0px; left:0px"></canvas></span>
+
 <img id="image" width="1" height="1" style="display:none;">
-<br><input type="button" id="colorChange" value="changeColor" style="display:none">
-<div id="result">
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div id="result" style="position:absolute; top:500;">
+
 <p id="colorPalette" style="display:none;">
-LINE-COLOR : <a id="c_" href="javascript:void(0);" onclick="setLineColor()" style="color:black;">■</a>
- <a id="c_" href="javascript:void(0);" onclick="setLineColor()" style="color:white;background-color:gray;">■</a>
- <a id="c_" href="javascript:void(0);" onclick="setLineColor()" style="color:red;">■</a>
- <a id="c_" href="javascript:void(0);" onclick="setLineColor()" style="color:green;">■</a>
- <a id="c_" href="javascript:void(0);" onclick="setLineColor()" style="color:blue;">■</a>
- <a id="c_" href="javascript:void(0);" onclick="setLineColor()" style="color:yellow;">■</a>
+LINE-COLOR : <a id="c_" href="javascript:void(0);" onclick="Canvas.setLineColor()" style="color:black;">■</a>
+ <a id="c_" href="javascript:void(0);" onclick="Canvas.setLineColor()" style="color:white;background-color:gray;">■</a>
+ <a id="c_" href="javascript:void(0);" onclick="Canvas.setLineColor()" style="color:red;">■</a>
+ <a id="c_" href="javascript:void(0);" onclick="Canvas.setLineColor()" style="color:green;">■</a>
+ <a id="c_" href="javascript:void(0);" onclick="Canvas.setLineColor()" style="color:blue;">■</a>
+ <a id="c_" href="javascript:void(0);" onclick="Canvas.setLineColor()" style="color:yellow;">■</a>
 </p>
- <p id="filterPalette" style="display:none;">
- <table cols="4" rows="1" border="0">
- <tbody><tr>
- <th>FILTER : </th>
- <th><input type="button" id="canvasColorChange" value="Reverse" style="display:none"></th>
- <th><!--<input type="button" id="aaa" value="Sepia" style="">--></th>
- <th><!--<input type="button" id="aaa" value="Mono" style="">--></th>
- </tr>
- </tbody></table>
- </p>
- <span id="carea" style="display:none;"><canvas id="c1" width="250" height="250"></canvas></span>
-<br><a href="javascript:void(0);" id="stamp" style="display:none;" onclick="StampFlag()">スタンプ</a>
+
+<p id="filterPalette" style="display:none;">
+<table cols="4" rows="1" border="0">
+<tbody><tr>
+<th>FILTER : </th>
+<th><input type="button" id="canvasColorChange" value="Reverse" style="display:none"></th>
+</tr>
+</tbody></table>
+</p>
+
 <input type="button" value="save" id="save" style="display:none;">
-<br>
-<br>
-<br>
 <span id="image_area" style="display:none;">
 ↓img（保存できます）<br>
-<img src="" alt="PNGに変換" width="250" height="250" id="image_png" class="target-img">
+<img src="" alt="PNGに変換" id="image_png" class="target-img">
 </span>
-
-
 
 </div></body></html>
