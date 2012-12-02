@@ -66,13 +66,11 @@ window.addEventListener("load",function(){
 	Canvas.resize = function (width, height){
 		if (width > height) {
 			if (width > Canvas.max_width) {
-				height *= Canvas.max_width / width;
 				height = Math.round(height *= Canvas.max_width / width);
 				width = Canvas.max_width;
 			}
 		} else {
 			if (height > Canvas.max_height) {
-				width *= Canvas.max_height / height;
 				width = Math.round(width *= Canvas.max_height / height);
 				height = Canvas.max_height;
 			}
