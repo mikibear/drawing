@@ -1,6 +1,6 @@
 window.addEventListener("load",function(){
     if(!window.File){
-        result.innerHTML = "FILE API is not found";
+        document.write("FILE API is not found");
         return;
     }
 
@@ -11,8 +11,8 @@ window.addEventListener("load",function(){
     Canvas.drawFlag = false;
     Canvas.pos = {x:0, y:0};
     Canvas.lastpos = {x:0, y:0};
-    Canvas.max_width = 500;
-    Canvas.max_height= 500;
+    Canvas.maxWidth = 500;
+    Canvas.maxHeight= 500;
 
     addEventListener("change", function(){
         var reader = new FileReader();
@@ -61,14 +61,14 @@ window.addEventListener("load",function(){
     //[参考] https://github.com/josefrichter/resize
     Canvas.resize = function (width, height){
         if (width > height) {
-            if (width > Canvas.max_width) {
-                height = Math.round(height *= Canvas.max_width / width);
-                width = Canvas.max_width;
+            if (width > Canvas.maxWidth) {
+                height = Math.round(height *= Canvas.maxWidth / width);
+                width = Canvas.maxWidth;
             }
         } else {
-            if (height > Canvas.max_height) {
-                width = Math.round(width *= Canvas.max_height / height);
-                height = Canvas.max_height;
+            if (height > Canvas.maxHeight) {
+                width = Math.round(width *= Canvas.maxHeight / height);
+                height = Canvas.maxHeight;
             }
         }
         Canvas.can.width = width;
