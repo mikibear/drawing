@@ -11,8 +11,8 @@ window.addEventListener("load",function(){
     Canvas.drawFlag = false;
     Canvas.pos = {x:0, y:0};
     Canvas.lastpos = {x:0, y:0};
-    Canvas.maxWidth = 500;
-    Canvas.maxHeight= 500;
+    var CANVAS_MAX_WIDTH  = 500;
+    var CANVAS_MAX_HEIGHT = 500;
 
     addEventListener("change", function(){
         var reader = new FileReader();
@@ -61,14 +61,14 @@ window.addEventListener("load",function(){
     //[参考] https://github.com/josefrichter/resize
     Canvas.resize = function (width, height){
         if (width > height) {
-            if (width > Canvas.maxWidth) {
-                height = Math.round(height *= Canvas.maxWidth / width);
-                width = Canvas.maxWidth;
+            if (width > CANVAS_MAX_WIDTH) {
+                height = Math.round(height *= CANVAS_MAX_WIDTH / width);
+                width = CANVAS_MAX_WIDTH;
             }
         } else {
-            if (height > Canvas.maxHeight) {
-                width = Math.round(width *= Canvas.maxHeight / height);
-                height = Canvas.maxHeight;
+            if (height > CANVAS_MAX_HEIGHT) {
+                width = Math.round(width *= CANVAS_MAX_HEIGHT / height);
+                height = CANVAS_MAX_HEIGHT;
             }
         }
         Canvas.can.width = width;
